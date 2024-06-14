@@ -1,6 +1,6 @@
 build:
 	@echo "Building..."
-	@docker compose --env-file ./app/.env --build
+	@docker compose --env-file ./app/.env build
 
 run:
 	@echo "Running..."
@@ -13,3 +13,7 @@ stop:
 watch:
 	@echo "Watching..."
 	@docker compose --env-file ./app/.env up -d && docker compose logs -f server
+
+test:
+	@echo "Testing..."
+	@docker exec server pytest --disable-warnings

@@ -1,6 +1,5 @@
-from .user import User
+from models.product import Product
+from models.category import Category
 from core.database import Base
 
-metadata = [model.metadata for model in Base.__subclasses__()]
-
-__all__ = ["User"]
+__all__ = ["Product", "Category"]
